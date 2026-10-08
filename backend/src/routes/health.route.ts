@@ -1,0 +1,9 @@
+import { Router } from 'express';
+import { HealthController } from '../controllers/health.controller.js';
+
+const healthRouter = Router();
+const healthController = new HealthController();
+
+healthRouter.get('/', healthController.getHealth);
+
+export default healthRouter;

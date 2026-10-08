@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 import { Pool } from 'pg';
 import { promises as fs } from 'fs';
 import {
@@ -7,6 +8,9 @@ import {
 } from 'kysely';
 import { Migrator, FileMigrationProvider, MigrationResult } from 'kysely/migration';
 import dotenv from 'dotenv';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, '../../../../.env') }); // Root .env
 
